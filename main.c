@@ -17,7 +17,7 @@ char * GenerateCharacters(){
 
     int index = 0;
 
-    char* characters = (char*) malloc(sizeof(char )* (size+1));
+    char* characters = (char*) malloc(sizeof(char )* (32+1));
 
     for (char i  = 'A'; i <= 'Z'; ++i) {
             UppercaseC[index] = i;
