@@ -1,85 +1,85 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
+int numberSize = 0;
+int limitSize = 32;
+int characterSize = 0;
+
 char * GenerateCharacters(){
+    srand(time(NULL));
 
     char UppercaseC[26];
 
+    int size = limitSize - numberSize;
+    characterSize = size;
+
     int index = 0;
 
-    int randomI = 0;
-    static char randomCharacters[3];
-
-    srand(time(NULL));
-    printf("\n");
+    char* characters = (char*) malloc(sizeof(char )* (size+1));
 
     for (char i  = 'A'; i <= 'Z'; ++i) {
             UppercaseC[index] = i;
             index++;
     }
 
-    for (int i = 0; i < index; ++i) {
-        printf("%c ",UppercaseC[i]);
+    if (characters == NULL) {
+        fprintf(stderr, "Erreur d'allocation de memoire.\n");
+        exit(1);
     }
 
-    for (int i = 0; i < 3; ++i) {
-        randomI = rand()%26;
-        printf(" |%c |",UppercaseC[randomI]);
-        randomCharacters[i] = UppercaseC[randomI];
+    for(int i = 0; i < size; ++i){
+        int randomI = rand() % 26;
+        characters[i] = UppercaseC[randomI];
+        //printf("%s",characters[i]);
     }
 
-    return randomCharacters;
+   characters[size] = '\0';
+
+    return characters;
 }
 
 int * GenerateNumbers(){
 
-    int size = 10;
-    int Numbers[size];
-
-    int randomN = 0;
-    static int randomNumbers[3];
-
     srand(time(NULL));
-    printf("\n");
+
+    int size = rand()%24;
+    numberSize = size;
+    int* numbers = (int*)malloc(size * sizeof(int));
+
+    if (numbers == NULL) {
+        fprintf(stderr, "Erreur d'allocation de memoire.\n");
+        exit(1);
+    }
 
     for (int i = 0; i < size; ++i) {
-        Numbers[i] = i;
-    }
-    for (int i = 0; i < size; ++i) {
-        printf("%d ", Numbers[i]);
-    }
-    for (int i = 0; i < 3; ++i) {
-        randomN = rand()%10;
-        randomNumbers[i] = Numbers[randomN];
+            numbers[i] = rand()%10;
+      // printf("%d",numbers[i]);
     }
 
-    return randomNumbers;
+    return numbers;
 
 }
 
 void GenerateCode(){
 
-   // printf("%c %d",GenerateCharacters(),GenerateNumbers());
+    int *n = GenerateNumbers();
 
-    int * n = GenerateNumbers();
-    char * c = GenerateCharacters();
+    char code[32];
 
-    int randomIndex = 0;
+    printf("%d", n);
+    free(n);
 
-    char * code = "";
+    char *c = GenerateCharacters();
 
-    printf("\n");
-
-    for (int i = 0; i < 3; ++i) {
-        printf("%d%c",n[i],c[i]);
-       // printf("%c",c[i]);
-       // code += c[i];
+    if(c != NULL){
+        printf("%s\n", c);
+        free(c);
+    } else {
+        fprintf(stderr, "Erreur lors de la génération de la séquence.\n");
     }
-
-    //printf("%c",code);
-
-
+  // code[i] = n[i];
 
 }
 
