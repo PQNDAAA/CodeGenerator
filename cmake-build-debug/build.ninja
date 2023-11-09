@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: untitled
+# Project: KeyGenerator
 # Configurations: Debug
 # =============================================================================
 
@@ -41,40 +41,40 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/Utilisateur/CLionProjects/untitled/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target untitled
+# Object build statements for EXECUTABLE target KeyGenerator
 
 
 #############################################
-# Order-only phony target for untitled
+# Order-only phony target for KeyGenerator
 
-build cmake_object_order_depends_target_untitled: phony || CMakeFiles/untitled.dir
+build cmake_object_order_depends_target_KeyGenerator: phony || CMakeFiles/KeyGenerator.dir
 
-build CMakeFiles/untitled.dir/main.c.obj: C_COMPILER__untitled_unscanned_Debug C$:/Users/Utilisateur/CLionProjects/untitled/main.c || cmake_object_order_depends_target_untitled
-  DEP_FILE = CMakeFiles\untitled.dir\main.c.obj.d
+build CMakeFiles/KeyGenerator.dir/main.c.obj: C_COMPILER__KeyGenerator_unscanned_Debug C$:/Users/Utilisateur/CLionProjects/untitled/main.c || cmake_object_order_depends_target_KeyGenerator
+  DEP_FILE = CMakeFiles\KeyGenerator.dir\main.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\untitled.dir
-  OBJECT_FILE_DIR = CMakeFiles\untitled.dir
-  TARGET_COMPILE_PDB = CMakeFiles\untitled.dir\
-  TARGET_PDB = untitled.pdb
+  OBJECT_DIR = CMakeFiles\KeyGenerator.dir
+  OBJECT_FILE_DIR = CMakeFiles\KeyGenerator.dir
+  TARGET_COMPILE_PDB = CMakeFiles\KeyGenerator.dir\
+  TARGET_PDB = KeyGenerator.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target untitled
+# Link build statements for EXECUTABLE target KeyGenerator
 
 
 #############################################
-# Link the executable untitled.exe
+# Link the executable KeyGenerator.exe
 
-build untitled.exe: C_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.c.obj
+build KeyGenerator.exe: C_EXECUTABLE_LINKER__KeyGenerator_Debug CMakeFiles/KeyGenerator.dir/main.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\untitled.dir
+  OBJECT_DIR = CMakeFiles\KeyGenerator.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\untitled.dir\
-  TARGET_FILE = untitled.exe
-  TARGET_IMPLIB = libuntitled.dll.a
-  TARGET_PDB = untitled.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\KeyGenerator.dir\
+  TARGET_FILE = KeyGenerator.exe
+  TARGET_IMPLIB = libKeyGenerator.dll.a
+  TARGET_PDB = KeyGenerator.pdb
 
 
 #############################################
@@ -102,7 +102,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build untitled: phony untitled.exe
+build KeyGenerator: phony KeyGenerator.exe
 
 # =============================================================================
 # Folder targets.
@@ -112,7 +112,7 @@ build untitled: phony untitled.exe
 #############################################
 # Folder: C:/Users/Utilisateur/CLionProjects/untitled/cmake-build-debug
 
-build all: phony untitled.exe
+build all: phony KeyGenerator.exe
 
 # =============================================================================
 # Built-in targets
