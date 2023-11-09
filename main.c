@@ -20,7 +20,9 @@ void ProgressBar(int step, int total){
     }
 
     printf( "% *c", width - pos,']');
-    printf(" %d%%",percent_2);
+    printf(" %d%% ",percent_2);
+    printf("%d/%d",step,total);
+
 
     SetConsoleTextAttribute(  GetStdHandle( STD_OUTPUT_HANDLE ), 0x07 );
 
