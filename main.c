@@ -2,8 +2,29 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <windows.h>
 
-int limitSize = 32;
+void Quit();
+
+void ProgressBar(int step, int total){
+    int width = 60;
+    int pos = (step * width) / total;
+    int percent = step / total * 100;
+    int percent_2 = (step * 100) / total;
+
+    SetConsoleTextAttribute(GetStdHandle( STD_OUTPUT_HANDLE), FOREGROUND_GREEN);
+    printf("\n[");
+
+    for (int i = 0; i < pos; ++i) {
+        printf("=");
+    }
+
+    printf( "% *c", width - pos,']');
+    printf(" %d%%",percent_2);
+
+    SetConsoleTextAttribute(  GetStdHandle( STD_OUTPUT_HANDLE ), 0x07 );
+
+}
 
 void swap(char *a, char *b) {
     char temp = *a;
@@ -12,7 +33,6 @@ void swap(char *a, char *b) {
 }
 
 void shuffle(char arr[], int size) {
-    srand(time(0));
     for (int i = size - 1; i > 0; i--) {
         int j = rand() % (i + 1);
         swap(&arr[i], &arr[j]);
@@ -43,7 +63,11 @@ char Random_Character(int index){
 void GenerateCode(int number){
     srand(time(NULL));
 
+    int step = 0;
+
     for (int i = 0; i < number; ++i) {
+
+        int limitSize = 32;
 
         char code[limitSize];
 
@@ -73,6 +97,8 @@ void GenerateCode(int number){
         for (int i = 0; i < limitSize; ++i) {
             printf("%c", code[i]);
         }
+        step +=1;
+        ProgressBar(step,number);
         printf("\n-----------------------\n");
     }
 
@@ -93,6 +119,8 @@ void StartingChoice() {
                 scanf("%d", &num);
                 printf("We're generating a code...\n");
                 GenerateCode(num);
+                printf("\n");
+                Quit();
                 break;
             case 2:
                 printf("Goodbye!\n");
@@ -100,6 +128,26 @@ void StartingChoice() {
             default:
                 printf("This is not correct\n");
         }
+}
+
+void Quit(){
+    int choice;
+    printf("Do you want quit?\n");
+    printf("1 - YES\n");
+    printf("2 - NO\n");
+
+    scanf("%d",&choice);
+
+    switch (choice) {
+        case 1:
+            exit(0);
+            break;
+        case 2:
+            StartingChoice();
+            break;
+        default:
+            printf("This is not correct\n");
+    }
 }
 
 int main() {

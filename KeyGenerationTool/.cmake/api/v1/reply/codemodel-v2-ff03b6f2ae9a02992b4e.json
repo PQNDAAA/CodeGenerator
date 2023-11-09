@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "untitled",
+					"name" : "KeyGenerator",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "untitled::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-untitled-Debug-d84968509c681aaebdae.json",
-					"name" : "untitled",
+					"id" : "KeyGenerator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-KeyGenerator-Debug-2cc87d92e3c188555b55.json",
+					"name" : "KeyGenerator",
 					"projectIndex" : 0
 				}
 			]
